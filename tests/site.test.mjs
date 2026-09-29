@@ -269,25 +269,24 @@ test("each preview page includes project detail beyond its opening summary", () 
   }
 });
 
-test("three distinct single-screen homepage prototypes use real project imagery", () => {
-  const expectedLayouts = ["deck-main", "sheet-main", "index-main"];
+test("three independent homepage concepts use real projects and accessible interactions", () => {
+  const expectedLayouts = ["ex-main", "di-main", "ws-main"];
   Object.entries(homePrototypes).forEach(([file, page], index) => {
     assert.match(page, new RegExp('class="' + expectedLayouts[index] + '"'), file);
     assert.match(page, /assets\/synaptech-design-logo\.png/i, file);
     assert.match(page, /assets\/project-cards\//i, file);
     assert.match(page, /home-prototype-1\.html[\s\S]*home-prototype-2\.html[\s\S]*home-prototype-3\.html/i, file);
-    assert.doesNotMatch(page, /home-prototype-[456]\.html/i, file);
     assert.doesNotMatch(page, /\b(?:award-winning|industry-leading|trusted by|guaranteed|#1)\b/i, file);
+    assert.match(page, /href="projects\.html"/i, file);
   });
-  assert.match(homePrototypeCss, /@media\s*\(max-width:\s*560px\)/i);
-  assert.match(homePrototypeCss, /@media\s*\(min-width:\s*821px\)[\s\S]*?body\s*{\s*overflow:\s*hidden/i);
-  assert.match(homePrototypeCss, /prefers-reduced-motion:\s*reduce/i);
-  for (const selector of expectedLayouts) {
-    assert.match(homePrototypeCss, new RegExp("\\." + selector + "\\s*\\{[^}]*height:\\s*calc\\(100svh\\s*-\\s*94px\\)", "i"));
-  }
+  assert.match(homePrototypeCss, /@media\(max-width:760px\)/i);
+  assert.match(homePrototypeCss, /prefers-reduced-motion:reduce/i);
+  assert.match(homePrototypeCss, /@keyframes ex-image-in/i);
+  assert.match(homePrototypeCss, /@keyframes di-preview-in/i);
+  assert.match(homePrototypeCss, /@keyframes ws-open/i);
   assert.match(homePrototypeScript, /aria-pressed/i);
-  assert.match(homePrototypeScript, /data-deck-card/i);
-  assert.match(homePrototypeScript, /data-index-trigger/i);
-  assert.match(homePrototypes["home-prototype-2.html"], /class="sheet-gallery"/i);
-  assert.match(homePrototypes["home-prototype-3.html"], /aria-expanded="false"/i);
+  assert.match(homePrototypeScript, /data-ex-button/i);
+  assert.match(homePrototypeScript, /data-di-item/i);
+  assert.match(homePrototypeScript, /showModal\(\)/i);
+  assert.match(homePrototypes["home-prototype-3.html"], /<dialog\b/i);
 });
