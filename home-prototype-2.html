@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f7f7f4" />
+    <meta name="description" content="Interactive project-stage homepage concept for Synaptech Design Solutions." />
+    <title>Homepage Concept 2 — Synaptech</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;600;700&family=Sora:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="home-prototypes.css?v=1" />
+  </head>
+  <body>
+    <a class="prototype-skip" href="#main">Skip to content</a>
+    <header class="prototype-header">
+      <a class="prototype-brand" href="index.html" aria-label="Return to the current Synaptech homepage"><img src="assets/synaptech-design-logo.png" width="5580" height="1740" alt="Synaptech Design Solutions" /></a>
+      <nav class="prototype-categories" aria-label="Project categories">
+        <a href="ai-tools.html">AI tools</a><a href="web-design.html">Web design</a><a href="graphic-design.html">Graphic design</a><a href="custom-software.html">Custom software</a>
+      </nav>
+      <nav class="prototype-switcher" aria-label="Homepage concepts">
+        <a class="prototype-current" href="index.html">Current</a><a href="home-prototype-1.html">01</a><a href="home-prototype-2.html" aria-current="page">02</a><a href="home-prototype-3.html">03</a>
+      </nav>
+    </header>
+
+    <main class="stage-main" id="main">
+      <section class="stage-copy" aria-labelledby="stage-heading">
+        <p class="prototype-kicker">Synaptech Design Solutions</p>
+        <h1 id="stage-heading">Clear thinking, tangible work.</h1>
+        <p>Strategy, design, and development for digital products, websites, storefronts, and interactive experiences.</p>
+        <div class="stage-actions"><a class="prototype-button" href="projects.html">Explore projects</a><a href="mailto:solutionswithsynaptech@gmail.com?subject=Synaptech%20project%20inquiry">Start a project</a></div>
+      </section>
+
+      <section class="stage-view" data-project-stage aria-label="Featured project selector">
+        <div class="stage-frame is-logo" data-stage-frame>
+          <img data-stage-image src="assets/project-cards/tonaliq.png" width="5808" height="1945" alt="TonaliQ wordmark and listening mark" />
+          <div class="stage-caption"><h2 data-stage-title>TonaliQ</h2><p data-stage-copy>Audio-grounded feedback for independent producers working on their own mixes.</p></div>
+        </div>
+        <div class="stage-tabs" aria-label="Choose a featured project">
+          <button class="stage-tab" type="button" aria-pressed="true" data-stage-tab data-title="TonaliQ" data-copy="Audio-grounded feedback for independent producers working on their own mixes." data-image="assets/project-cards/tonaliq.png" data-alt="TonaliQ wordmark and listening mark" data-link="project-tonaliq.html" data-fit="contain">TonaliQ</button>
+          <button class="stage-tab" type="button" aria-pressed="false" data-stage-tab data-title="BYU Move" data-copy="A web application for registration, participant self-service, mentor workflows, and administrative operations." data-image="assets/project-cards/byu-move.jpg" data-alt="BYU Move participants running on a track" data-link="project-move-team.html">BYU Move</button>
+          <button class="stage-tab" type="button" aria-pressed="false" data-stage-tab data-title="The Decal Company" data-copy="Graphic design work developed for The Decal Company." data-image="assets/project-cards/decal-company.png" data-alt="The Decal Company identity application" data-link="project-decal-company.html" data-fit="contain">The Decal Company</button>
+          <button class="stage-tab" type="button" aria-pressed="false" data-stage-tab data-title="redrising.games" data-copy="An unofficial fan project with browser-based quizzes, simulations, and community tools." data-image="assets/project-cards/red-rising.png" data-alt="Red Rising Games project logo" data-link="project-red-rising.html" data-fit="contain">redrising.games</button>
+        </div>
+        <a class="prototype-button stage-open" data-stage-link href="project-tonaliq.html">Open featured project</a>
+      </section>
+    </main>
+    <script src="home-prototypes.js" defer></script>
+  </body>
+</html>
