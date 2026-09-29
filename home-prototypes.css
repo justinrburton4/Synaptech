@@ -17,3 +17,30 @@
 @media(max-width:760px){.ex-options{grid-template-columns:repeat(2,minmax(0,1fr))}.ex-options button{min-width:0}.ex-options button span{overflow-wrap:anywhere}}
 .ex-options button{transition:background-color .25s ease,color .25s ease}.ex-options button:hover,.ex-options button:focus-visible{padding-left:1rem}.di-list>a{transition:background-color .24s ease}.di-list>a:hover,.di-list>a:focus-visible,.di-list>a.is-active{padding-left:0}.ws-dialog{overscroll-behavior:contain}.ex-statement h1,.di-masthead h1,.ws-intro h1{text-wrap:balance}
 .ws-folders small{font-size:.68rem}.ex-options button small{font-size:.7rem}.di-list>a small{font-size:.72rem}
+
+/* Restraint pass: one focal point and one primary action per concept. */
+.ex-main{grid-template-columns:minmax(0,1fr) 270px}
+.ex-statement{top:22%}
+.ex-statement h1{font-size:clamp(4rem,7vw,7rem)}
+.ex-selected{left:clamp(1.5rem,5vw,5.5rem);right:auto;bottom:2rem;min-width:0;display:grid;grid-template-columns:auto auto;column-gap:1rem;align-items:end;padding:.7rem 0;background:none;color:#fff;animation:none}
+.ex-selected span{grid-column:1/-1;color:#ddd}
+.ex-selected strong{font-size:1.8rem}
+.ex-selected a{margin:0;border-color:#fff;white-space:nowrap}
+.ex-options button{justify-content:flex-start;padding:1rem}
+.exhibition .concept-switcher{right:280px}
+.di-main{grid-template-rows:minmax(0,23%) minmax(0,77%)}
+.di-masthead{grid-template-columns:minmax(0,1fr) auto;gap:1rem;padding:1.2rem 0}
+.di-masthead h1{font-size:clamp(2.8rem,5vw,5rem);line-height:1}
+.di-masthead img{width:118px}
+.di-wordmark img{width:175px;mix-blend-mode:multiply}
+.di-preview{grid-template-rows:minmax(0,1fr) auto}
+.di-preview>a{margin-top:.25rem}
+.ws-bar{display:flex;justify-content:space-between}
+.ws-main{grid-template-rows:minmax(0,23%) minmax(0,1fr);background:#dedfdb}
+.ws-intro h1{font-size:clamp(2.8rem,4.6vw,4.7rem);line-height:1}
+.ws-intro>span{margin-top:.45rem}
+.ws-folders button{box-shadow:2px 2px 0 #394039}
+.ws-folders button:hover,.ws-folders button:focus-visible{transform:translate(-2px,-2px);box-shadow:4px 4px 0 #394039}
+@media(max-width:1000px) and (min-width:761px){.ex-main{grid-template-columns:minmax(0,1fr) 245px}.exhibition .concept-switcher{right:255px}}
+@media(max-width:760px){.ex-selected{left:1.2rem;right:auto;bottom:1.4rem}.di-main,.ws-main{display:block}.di-masthead{display:flex;justify-content:space-between;align-items:end}.di-masthead img{display:block;width:85px}.ws-intro{min-height:150px}}
+@media(max-width:480px){.ex-selected{grid-template-columns:1fr;gap:.3rem}.ex-selected span{grid-column:auto}.ex-selected a{width:fit-content}.di-masthead img{width:72px}.di-masthead h1{font-size:2.65rem}}
