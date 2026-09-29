@@ -188,8 +188,9 @@ test("the projects page includes a factual linked card for redrising.games", () 
 });
 
 test("project cards use a compact desktop footprint", () => {
-  assert.match(css, /\.project-card\s*{[^}]*min-height:\s*300px/i);
-  assert.match(css, /\.project-visual\s*{[^}]*min-height:\s*300px/i);
+  assert.match(css, /\.project-card\s*{[^}]*min-height:\s*0/i);
+  assert.match(css, /\.project-card\s*{[^}]*grid-template-rows:\s*minmax\(185px,\s*19vw\)\s*auto/i);
+  assert.match(css, /\.project-visual\s*{[^}]*min-height:\s*190px/i);
   assert.match(css, /\.project-card h3\s*{[^}]*font-size:\s*clamp\(/i);
 });
 
