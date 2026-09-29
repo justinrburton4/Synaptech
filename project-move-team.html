@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="An interactive preview of the BYU Move Team Management System." />
+    <title>BYU Move Team Management System — Synaptech</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link rel="preload" as="image" href="assets/byu-move/background.jpeg" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="project-preview.js" defer></script>
+  </head>
+  <body class="preview-page">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <a class="brand" href="index.html" aria-label="Synaptech home"><img src="assets/synaptech-design-logo.png" alt="Synaptech Design Solutions" /></a>
+      <nav class="project-nav" aria-label="Primary">
+        <a class="project-nav-link" href="ai-tools.html" aria-label="AI tools"><span class="project-nav-wide">AI tools</span><span class="project-nav-short" aria-hidden="true">AI</span></a>
+        <a class="project-nav-link" href="web-design.html" aria-label="Web design"><span class="project-nav-wide">Web design</span><span class="project-nav-short" aria-hidden="true">Web</span></a>
+        <a class="project-nav-link" href="graphic-design.html" aria-label="Graphic design"><span class="project-nav-wide">Graphic design</span><span class="project-nav-short" aria-hidden="true">Graphics</span></a>
+        <a class="project-nav-link" href="custom-software.html" aria-label="Custom software"><span class="project-nav-wide">Custom software</span><span class="project-nav-short" aria-hidden="true">Software</span></a>
+        <a class="project-nav-link project-nav-all" href="projects.html" aria-label="All projects"><span class="project-nav-wide">All projects</span><span class="project-nav-short" aria-hidden="true">All</span><span class="project-nav-arrow" aria-hidden="true">↗</span></a>
+      </nav>
+    </header>
+    <main class="preview-main" id="main">
+      <section class="preview-hero">
+        <p class="eyebrow"><span></span> Custom Software</p>
+        <h1>BYU Move Team Management System</h1>
+        <div class="preview-layout">
+          <div>
+            <p class="preview-intro">A Flask-based application for the BYU Move initiative with public registration and survey paths, participant self-service, and mentor and administrative operations.</p>
+            <a class="preview-back" href="custom-software.html">← Back to custom software</a>
+          </div>
+          <div class="preview-mark" aria-hidden="true">MT</div>
+        </div>
+      </section>
+
+      <section class="preview-details" aria-labelledby="move-details-title">
+        <div class="preview-details-head">
+          <span class="preview-kicker">Interactive walkthrough</span>
+          <h2 id="move-details-title">Explore three representative views from the undeployed application.</h2>
+        </div>
+        <div class="preview-facts">
+          <div class="preview-fact"><strong>Public site</strong><p>Program overview, registration entry point, resource links, and survey access.</p></div>
+          <div class="preview-fact"><strong>Participant tools</strong><p>Email-based signup lookup and session-change flow.</p></div>
+          <div class="preview-fact"><strong>Team operations</strong><p>Attendance, sessions, participants, calendar, reporting, and administrative settings.</p></div>
+        </div>
+
+        <div class="move-demo">
+          <div class="move-demo-bar">
+            <span class="move-demo-brand">BYU MOVE · PROJECT DEMO</span>
+            <div class="move-demo-tabs" role="tablist" aria-label="BYU Move demo views">
+              <button class="move-demo-tab" type="button" role="tab" aria-selected="true" data-move-view="home">Program home</button>
+              <button class="move-demo-tab" type="button" role="tab" aria-selected="false" data-move-view="movers">Movers</button>
+              <button class="move-demo-tab" type="button" role="tab" aria-selected="false" data-move-view="admin">Admin portal</button>
+            </div>
+          </div>
+
+          <section class="move-demo-panel" data-move-panel="home" role="tabpanel">
+            <div class="move-demo-home">
+              <div><p class="preview-kicker">Exercise Sciences · BYU Move!</p><h3>Move together. Build consistency.</h3><p>This representative home view uses the project’s supplied track image and mirrors its public paths to learn more, register, and access program resources.</p></div>
+            </div>
+          </section>
+
+          <section class="move-demo-panel" data-move-panel="movers" role="tabpanel" hidden>
+            <div class="move-dashboard">
+              <p class="preview-kicker">Participant self-service</p><h3>Movers Dashboard</h3><p>A participant can look up registered sessions and move to another available time.</p>
+              <div class="move-demo-grid">
+                <div class="move-demo-card"><strong>Monday &amp; Wednesday</strong><span>7:00–8:00 AM<br />4 spaces shown</span></div>
+                <div class="move-demo-card"><strong>Tuesday &amp; Thursday</strong><span>4:00–5:00 PM<br />2 spaces shown</span></div>
+                <div class="move-demo-card"><strong>Session change</strong><span>Choose another open time and save the selection.</span></div>
+              </div>
+            </div>
+          </section>
+
+          <section class="move-demo-panel" data-move-panel="admin" role="tabpanel" hidden>
+            <div class="byu-admin-shell">
+              <header class="byu-admin-head">
+                <div class="byu-admin-brand"><span>Department of Exercise Sciences</span><strong>BYU MOVE!</strong></div>
+                <nav class="byu-admin-links" aria-label="BYU Move application preview"><span>Surveys</span><span>Movers</span><span>Mentors</span></nav>
+              </header>
+              <div class="byu-admin-body">
+                <div class="byu-admin-title"><h3>Mentors Portal</h3><p>Manage attendance and view session information — <strong>Spring Term 2026</strong></p></div>
+                <div class="byu-admin-welcome">Welcome, <strong>BYU Move Admin</strong></div>
+                <div class="byu-admin-tabs" role="tablist" aria-label="Admin portal views">
+                  <button type="button" aria-selected="true" data-admin-view="dashboard">Dashboard</button>
+                  <button type="button" aria-selected="false" data-admin-view="sessions">Sessions</button>
+                  <button type="button" aria-selected="false" data-admin-view="participants">Participants</button>
+                  <button type="button" aria-selected="false" data-admin-view="calendar">Calendar</button>
+                  <button type="button" aria-selected="false" data-admin-view="manage">Manage Sessions</button>
+                  <button type="button" aria-selected="false" data-admin-view="mentors">Manage Mentors</button>
+                  <button type="button" aria-selected="false" data-admin-view="tools">System Tools</button>
+                </div>
+                <div class="byu-admin-panel" data-admin-panel="dashboard">
+                  <div class="byu-admin-card"><h4>Next Session</h4><p>No upcoming sessions found in this demonstration state.</p></div>
+                  <div class="byu-admin-card"><h4>Pending Attendance</h4><p>No pending attendance from sessions completed in the last 24 hours.</p></div>
+                </div>
+                <div class="byu-admin-panel" data-admin-panel="sessions" hidden>
+                  <div class="byu-admin-card byu-admin-wide"><h4>Sessions</h4><p>Select a session to view its schedule, mentor assignment, participant list, and attendance status.</p></div>
+                </div>
+                <div class="byu-admin-panel" data-admin-panel="participants" hidden>
+                  <div class="byu-admin-card byu-admin-wide"><h4>Participants</h4><p>Search the participant roster and open an attendance profile for an individual mover.</p></div>
+                </div>
+                <div class="byu-admin-panel" data-admin-panel="calendar" hidden>
+                  <div class="byu-admin-card byu-admin-wide"><h4>Calendar</h4><p>Switch between monthly and weekly views, navigate dates, and manage program events.</p></div>
+                </div>
+                <div class="byu-admin-panel" data-admin-panel="manage" hidden>
+                  <div class="byu-admin-card byu-admin-wide"><h4>Manage Sessions</h4><p>Create and update session schedules, capacities, assignments, date windows, and participant rosters.</p></div>
+                </div>
+                <div class="byu-admin-panel" data-admin-panel="mentors" hidden>
+                  <div class="byu-admin-card byu-admin-wide"><h4>Manage Mentors</h4><p>Maintain the mentor roster and role assignments used by the portal.</p></div>
+                </div>
+                <div class="byu-admin-panel" data-admin-panel="tools" hidden>
+                  <div class="byu-admin-card byu-admin-wide"><h4>System Tools</h4><div class="byu-tool-grid"><span>Active semester</span><span>Alert banner</span><span>Advanced reporting</span><span>Data download &amp; backup</span><span>Registration status</span><span>Roles &amp; access</span></div></div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

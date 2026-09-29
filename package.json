@@ -1,0 +1,9 @@
+{
+  "name": "synaptech-landing",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node server.mjs",
+    "test": "node tests/site.test.mjs && node tests/server.test.mjs"
+  }
+}
