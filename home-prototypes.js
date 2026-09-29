@@ -1,34 +1,45 @@
-const stage = document.querySelector("[data-project-stage]");
+const deck = document.querySelector("[data-deck]");
 
-if (stage) {
-  const image = stage.querySelector("[data-stage-image]");
-  const title = stage.querySelector("[data-stage-title]");
-  const copy = stage.querySelector("[data-stage-copy]");
-  const link = stage.querySelector("[data-stage-link]");
-  const frame = stage.querySelector("[data-stage-frame]");
-  const tabs = [...stage.querySelectorAll("[data-stage-tab]")];
+if (deck) {
+  const cards = [...deck.querySelectorAll("[data-deck-card]")];
+  const title = deck.querySelector("[data-deck-title]");
+  const copy = deck.querySelector("[data-deck-copy]");
+  const link = deck.querySelector("[data-deck-link]");
+  const positions = ["active", "left", "bottom"];
 
-  tabs.forEach((tab) => {
-    tab.addEventListener("click", () => {
-      tabs.forEach((item) => item.setAttribute("aria-pressed", String(item === tab)));
-      image.src = tab.dataset.image;
-      image.alt = tab.dataset.alt;
-      title.textContent = tab.dataset.title;
-      copy.textContent = tab.dataset.copy;
-      link.href = tab.dataset.link;
-      frame.classList.toggle("is-logo", tab.dataset.fit === "contain");
+  cards.forEach((card) => card.addEventListener("click", () => {
+    const selected = cards.indexOf(card);
+    cards.forEach((item, index) => {
+      item.setAttribute("aria-pressed", String(item === card));
+      item.dataset.position = positions[(index - selected + cards.length) % cards.length];
     });
-  });
+    title.textContent = card.dataset.title;
+    copy.textContent = card.dataset.copy;
+    link.href = card.dataset.link;
+  }));
 }
 
-const rail = document.querySelector("[data-project-rail]");
+const lens = document.querySelector("[data-lens]");
 
-if (rail) {
-  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  document.querySelector("[data-rail-prev]")?.addEventListener("click", () => {
-    rail.scrollBy({ left: -rail.clientWidth * 0.72, behavior: reducedMotion ? "auto" : "smooth" });
-  });
-  document.querySelector("[data-rail-next]")?.addEventListener("click", () => {
-    rail.scrollBy({ left: rail.clientWidth * 0.72, behavior: reducedMotion ? "auto" : "smooth" });
-  });
+if (lens) {
+  const frame = lens.querySelector("[data-lens-frame]");
+  const image = lens.querySelector("[data-lens-image]");
+  const title = lens.querySelector("[data-lens-title]");
+  const category = lens.querySelector("[data-lens-category]");
+  const copy = lens.querySelector("[data-lens-copy]");
+  const link = lens.querySelector("[data-lens-link]");
+  const counter = lens.querySelector("[data-lens-counter]");
+  const buttons = [...lens.querySelectorAll("[data-lens-button]")];
+
+  buttons.forEach((button, index) => button.addEventListener("click", () => {
+    buttons.forEach((item) => item.setAttribute("aria-pressed", String(item === button)));
+    image.src = button.dataset.image;
+    image.alt = button.dataset.alt;
+    title.textContent = button.dataset.title;
+    category.textContent = button.dataset.category;
+    copy.textContent = button.dataset.copy;
+    link.href = button.dataset.link;
+    counter.textContent = `${String(index + 1).padStart(2, "0")} / ${String(buttons.length).padStart(2, "0")}`;
+    frame.classList.toggle("is-contain", button.dataset.fit === "contain");
+  }));
 }

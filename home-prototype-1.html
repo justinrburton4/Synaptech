@@ -4,41 +4,38 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#f7f7f4" />
-    <meta name="description" content="Contact-sheet homepage concept for Synaptech Design Solutions." />
+    <meta name="description" content="Interactive project-deck homepage concept for Synaptech Design Solutions." />
     <title>Homepage Concept 1 — Synaptech</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;600;700&family=Sora:wght@400;500;600&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="home-prototypes.css?v=1" />
+    <link rel="stylesheet" href="home-prototypes.css?v=2" />
   </head>
   <body>
-    <a class="prototype-skip" href="#main">Skip to content</a>
-    <header class="prototype-header">
-      <a class="prototype-brand" href="index.html" aria-label="Return to the current Synaptech homepage"><img src="assets/synaptech-design-logo.png" width="5580" height="1740" alt="Synaptech Design Solutions" /></a>
-      <nav class="prototype-categories" aria-label="Project categories">
-        <a href="ai-tools.html">AI tools</a><a href="web-design.html">Web design</a><a href="graphic-design.html">Graphic design</a><a href="custom-software.html">Custom software</a>
-      </nav>
-      <nav class="prototype-switcher" aria-label="Homepage concepts">
-        <a class="prototype-current" href="index.html">Current</a><a href="home-prototype-1.html" aria-current="page">01</a><a href="home-prototype-2.html">02</a><a href="home-prototype-3.html">03</a><a href="home-prototype-4.html">04</a><a href="home-prototype-5.html">05</a><a href="home-prototype-6.html">06</a>
-      </nav>
+    <a class="concept-skip" href="#main">Skip to content</a>
+    <header class="concept-header">
+      <a class="concept-brand" href="index.html" aria-label="Return to the current Synaptech homepage"><img src="assets/synaptech-design-logo.png" width="5580" height="1740" alt="Synaptech Design Solutions" /></a>
+      <nav class="concept-nav" aria-label="Primary"><a href="ai-tools.html">AI Tools</a><a href="web-design.html">Web Design</a><a href="graphic-design.html">Graphic Design</a><a href="custom-software.html">Custom Software</a><a class="concept-nav-all" href="projects.html">All Projects</a></nav>
     </header>
+    <nav class="concept-switcher" aria-label="Homepage concepts"><a href="index.html">Current</a><a href="home-prototype-1.html" aria-current="page">01</a><a href="home-prototype-2.html">02</a><a href="home-prototype-3.html">03</a></nav>
 
-    <main class="contact-main" id="main">
-      <section class="contact-intro" aria-labelledby="contact-title">
-        <p class="prototype-kicker">Design and development</p>
-        <h1 id="contact-title">Ideas, made useful.</h1>
+    <main class="deck-main" id="main" data-deck>
+      <section class="deck-copy" aria-labelledby="deck-heading">
+        <p class="concept-kicker">Strategy, design and development</p>
+        <h1 id="deck-heading">Design solutions for ideas worth <span>building.</span></h1>
         <p>Synaptech designs and builds digital products, websites, storefronts, and interactive experiences around a clear purpose and the people using them.</p>
-        <div class="contact-links"><a class="prototype-button" href="projects.html">View all projects</a><a class="contact-email" href="mailto:solutionswithsynaptech@gmail.com?subject=Synaptech%20project%20inquiry">Start a project</a></div>
+        <div class="deck-actions"><a class="concept-button" href="projects.html">Explore projects</a><a class="concept-text-link" href="mailto:solutionswithsynaptech@gmail.com?subject=Synaptech%20project%20inquiry">Start a project</a></div>
       </section>
 
-      <section class="contact-grid" aria-label="Selected projects">
-        <a class="contact-card contact-card-logo" href="project-tonaliq.html"><img src="assets/project-cards/tonaliq.png" width="5808" height="1945" alt="TonaliQ wordmark and listening mark" /><span>TonaliQ <small>Product and AI</small></span></a>
-        <a class="contact-card" href="project-move-team.html"><img src="assets/project-cards/byu-move.jpg" width="1200" height="1200" alt="BYU Move participants running on a track" /><span>BYU Move <small>Custom software</small></span></a>
-        <a class="contact-card contact-card-logo" href="project-red-rising.html"><img src="assets/project-cards/red-rising.png" width="6262" height="5852" alt="Red Rising Games project logo" /><span>redrising.games <small>Interactive</small></span></a>
-        <a class="contact-card" href="project-design-byu.html"><img src="assets/project-cards/design-byu.jpg" width="1500" height="1500" alt="Design Exploration team profile photography" /><span>design.byu.edu <small>Web design</small></span></a>
-        <a class="contact-card contact-card-light contact-card-logo" href="project-decal-company.html"><img src="assets/project-cards/decal-company.png" width="6000" height="4000" alt="The Decal Company identity application" /><span>The Decal Company <small>Graphic design</small></span></a>
-        <a class="contact-card" href="project-spicy-pineapple.html"><img src="assets/project-cards/spicy-pineapple.png" width="1254" height="1254" alt="Sun Eater mug storefront mockup" /><span>SpicyPineappleGroup <small>Storefront</small></span></a>
+      <section class="deck-experience" aria-label="Choose a featured project">
+        <div class="deck-stage">
+          <button class="deck-card is-logo" type="button" aria-pressed="true" data-deck-card data-position="active" data-title="TonaliQ" data-copy="Product and AI tools" data-link="project-tonaliq.html"><img src="assets/project-cards/tonaliq.png" width="5808" height="1945" alt="TonaliQ wordmark and listening mark" /><span class="deck-card-label"><span>TonaliQ</span><span>Product and AI</span></span></button>
+          <button class="deck-card" type="button" aria-pressed="false" data-deck-card data-position="left" data-title="BYU Move" data-copy="Custom software and operations" data-link="project-move-team.html"><img src="assets/project-cards/byu-move.jpg" width="1200" height="1200" alt="BYU Move participants running on a track" /><span class="deck-card-label"><span>BYU Move</span><span>Custom software</span></span></button>
+          <button class="deck-card" type="button" aria-pressed="false" data-deck-card data-position="bottom" data-title="The Decal Company" data-copy="Identity and graphic design" data-link="project-decal-company.html"><img src="assets/project-cards/decal-company.png" width="6000" height="4000" alt="The Decal Company identity application" /><span class="deck-card-label"><span>The Decal Company</span><span>Identity</span></span></button>
+        </div>
+        <div class="deck-meta" aria-live="polite"><div><h2 data-deck-title>TonaliQ</h2><p data-deck-copy>Product and AI tools</p></div><a data-deck-link href="project-tonaliq.html">Open project</a></div>
       </section>
     </main>
+    <script src="home-prototypes.js" defer></script>
   </body>
 </html>

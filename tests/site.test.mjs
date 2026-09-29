@@ -24,14 +24,9 @@ const homePrototypes = {
   "home-prototype-1.html": await readFile(new URL("../home-prototype-1.html", import.meta.url), "utf8").catch(() => ""),
   "home-prototype-2.html": await readFile(new URL("../home-prototype-2.html", import.meta.url), "utf8").catch(() => ""),
   "home-prototype-3.html": await readFile(new URL("../home-prototype-3.html", import.meta.url), "utf8").catch(() => ""),
-  "home-prototype-4.html": await readFile(new URL("../home-prototype-4.html", import.meta.url), "utf8").catch(() => ""),
-  "home-prototype-5.html": await readFile(new URL("../home-prototype-5.html", import.meta.url), "utf8").catch(() => ""),
-  "home-prototype-6.html": await readFile(new URL("../home-prototype-6.html", import.meta.url), "utf8").catch(() => ""),
 };
 const homePrototypeCss = await readFile(new URL("../home-prototypes.css", import.meta.url), "utf8").catch(() => "");
 const homePrototypeScript = await readFile(new URL("../home-prototypes.js", import.meta.url), "utf8").catch(() => "");
-const homeRadicalCss = await readFile(new URL("../home-radicals.css", import.meta.url), "utf8").catch(() => "");
-const homeRadicalScript = await readFile(new URL("../home-radicals.js", import.meta.url), "utf8").catch(() => "");
 const allInteriorPages = { projects, ...categoryPages, ...previewPages };
 
 test("landing page presents Synaptech without unverifiable proof claims", () => {
@@ -274,24 +269,23 @@ test("each preview page includes project detail beyond its opening summary", () 
   }
 });
 
-test("six distinct homepage prototypes use real project content and remain comparable", () => {
-  const expectedLayouts = ["contact-main", "stage-main", "rail-main", "orbit-main", "billboard-main", "registry-main"];
+test("three interactive single-screen homepage prototypes stay close to the current visual system", () => {
+  const expectedLayouts = ["deck-main", "lens-main", "strip-main"];
   Object.entries(homePrototypes).forEach(([file, page], index) => {
     assert.match(page, new RegExp('class="' + expectedLayouts[index] + '"'), file);
     assert.match(page, /assets\/synaptech-design-logo\.png/i, file);
     assert.match(page, /assets\/project-cards\//i, file);
-    assert.match(page, /home-prototype-1\.html[\s\S]*home-prototype-2\.html[\s\S]*home-prototype-3\.html[\s\S]*home-prototype-4\.html[\s\S]*home-prototype-5\.html[\s\S]*home-prototype-6\.html/i, file);
+    assert.match(page, /home-prototype-1\.html[\s\S]*home-prototype-2\.html[\s\S]*home-prototype-3\.html/i, file);
+    assert.doesNotMatch(page, /home-prototype-[456]\.html/i, file);
     assert.doesNotMatch(page, /\b(?:award-winning|industry-leading|trusted by|guaranteed|#1)\b/i, file);
   });
-  assert.match(homePrototypeCss, /@media\s*\(max-width:\s*640px\)/i);
+  assert.match(homePrototypeCss, /@media\s*\(max-width:\s*560px\)/i);
+  assert.match(homePrototypeCss, /@media\s*\(min-width:\s*821px\)[\s\S]*?body\s*{\s*overflow:\s*hidden/i);
   assert.match(homePrototypeCss, /prefers-reduced-motion:\s*reduce/i);
+  for (const selector of ["deck-main", "lens-main", "strip-main"]) {
+    assert.match(homePrototypeCss, new RegExp("\\." + selector + "\\s*\\{[^}]*height:\\s*calc\\(100svh\\s*-\\s*94px\\)", "i"));
+  }
   assert.match(homePrototypeScript, /aria-pressed/i);
-  assert.match(homePrototypeScript, /scrollBy/i);
-  assert.match(homeRadicalCss, /\.orbit-map/i);
-  assert.match(homeRadicalCss, /\.billboard-panels/i);
-  assert.match(homeRadicalCss, /\.registry-index/i);
-  assert.match(homeRadicalCss, /prefers-reduced-motion:\s*reduce/i);
-  assert.match(homeRadicalScript, /data-orbit-node/i);
-  assert.match(homeRadicalScript, /data-registry-row/i);
-  assert.match(homePrototypes["home-prototype-4.html"], /Synapse \+ technology/i);
+  assert.match(homePrototypeScript, /data-deck-card/i);
+  assert.match(homePrototypeScript, /data-lens-button/i);
 });
