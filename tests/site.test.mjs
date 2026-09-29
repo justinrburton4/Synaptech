@@ -24,9 +24,14 @@ const homePrototypes = {
   "home-prototype-1.html": await readFile(new URL("../home-prototype-1.html", import.meta.url), "utf8").catch(() => ""),
   "home-prototype-2.html": await readFile(new URL("../home-prototype-2.html", import.meta.url), "utf8").catch(() => ""),
   "home-prototype-3.html": await readFile(new URL("../home-prototype-3.html", import.meta.url), "utf8").catch(() => ""),
+  "home-prototype-4.html": await readFile(new URL("../home-prototype-4.html", import.meta.url), "utf8").catch(() => ""),
+  "home-prototype-5.html": await readFile(new URL("../home-prototype-5.html", import.meta.url), "utf8").catch(() => ""),
+  "home-prototype-6.html": await readFile(new URL("../home-prototype-6.html", import.meta.url), "utf8").catch(() => ""),
 };
 const homePrototypeCss = await readFile(new URL("../home-prototypes.css", import.meta.url), "utf8").catch(() => "");
 const homePrototypeScript = await readFile(new URL("../home-prototypes.js", import.meta.url), "utf8").catch(() => "");
+const homeRadicalCss = await readFile(new URL("../home-radicals.css", import.meta.url), "utf8").catch(() => "");
+const homeRadicalScript = await readFile(new URL("../home-radicals.js", import.meta.url), "utf8").catch(() => "");
 const allInteriorPages = { projects, ...categoryPages, ...previewPages };
 
 test("landing page presents Synaptech without unverifiable proof claims", () => {
@@ -269,17 +274,24 @@ test("each preview page includes project detail beyond its opening summary", () 
   }
 });
 
-test("three distinct homepage prototypes use real project content and remain comparable", () => {
-  const expectedLayouts = ["contact-main", "stage-main", "rail-main"];
+test("six distinct homepage prototypes use real project content and remain comparable", () => {
+  const expectedLayouts = ["contact-main", "stage-main", "rail-main", "orbit-main", "billboard-main", "registry-main"];
   Object.entries(homePrototypes).forEach(([file, page], index) => {
     assert.match(page, new RegExp('class="' + expectedLayouts[index] + '"'), file);
     assert.match(page, /assets\/synaptech-design-logo\.png/i, file);
     assert.match(page, /assets\/project-cards\//i, file);
-    assert.match(page, /home-prototype-1\.html[\s\S]*home-prototype-2\.html[\s\S]*home-prototype-3\.html/i, file);
+    assert.match(page, /home-prototype-1\.html[\s\S]*home-prototype-2\.html[\s\S]*home-prototype-3\.html[\s\S]*home-prototype-4\.html[\s\S]*home-prototype-5\.html[\s\S]*home-prototype-6\.html/i, file);
     assert.doesNotMatch(page, /\b(?:award-winning|industry-leading|trusted by|guaranteed|#1)\b/i, file);
   });
   assert.match(homePrototypeCss, /@media\s*\(max-width:\s*640px\)/i);
   assert.match(homePrototypeCss, /prefers-reduced-motion:\s*reduce/i);
   assert.match(homePrototypeScript, /aria-pressed/i);
   assert.match(homePrototypeScript, /scrollBy/i);
+  assert.match(homeRadicalCss, /\.orbit-map/i);
+  assert.match(homeRadicalCss, /\.billboard-panels/i);
+  assert.match(homeRadicalCss, /\.registry-index/i);
+  assert.match(homeRadicalCss, /prefers-reduced-motion:\s*reduce/i);
+  assert.match(homeRadicalScript, /data-orbit-node/i);
+  assert.match(homeRadicalScript, /data-registry-row/i);
+  assert.match(homePrototypes["home-prototype-4.html"], /Synapse \+ technology/i);
 });
