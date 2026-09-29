@@ -3,55 +3,57 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f7f7f4" />
     <meta name="description" content="Synaptech Design Solutions creates digital products, websites, storefronts, and interactive experiences." />
     <title>Synaptech — Design Solutions</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;600;700&family=Sora:wght@400;500;600&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css" />
   </head>
-  <body>
-    <a class="skip-link" href="#main">Skip to content</a>
+  <body class="home-page">
+    <a class="skip-link" href="#main">Skip to Content</a>
 
     <header class="site-header">
       <a class="brand" href="#top" aria-label="Synaptech home">
-        <img src="assets/synaptech-design-logo.png" alt="Synaptech Design Solutions" />
+        <img src="assets/synaptech-design-logo.png" width="5580" height="1740" alt="Synaptech Design Solutions" fetchpriority="high" />
       </a>
       <nav class="project-nav" aria-label="Primary">
-        <a class="project-nav-link" href="ai-tools.html" aria-label="AI tools">
-          <span class="project-nav-wide">AI tools</span><span class="project-nav-short" aria-hidden="true">AI</span>
-        </a>
-        <a class="project-nav-link" href="web-design.html" aria-label="Web design">
-          <span class="project-nav-wide">Web design</span><span class="project-nav-short" aria-hidden="true">Web</span>
-        </a>
-        <a class="project-nav-link" href="graphic-design.html" aria-label="Graphic design">
-          <span class="project-nav-wide">Graphic design</span><span class="project-nav-short" aria-hidden="true">Graphics</span>
-        </a>
-        <a class="project-nav-link" href="custom-software.html" aria-label="Custom software">
-          <span class="project-nav-wide">Custom software</span><span class="project-nav-short" aria-hidden="true">Software</span>
-        </a>
-        <a class="project-nav-link project-nav-all" href="projects.html" aria-label="All projects">
-          <span class="project-nav-wide">All projects</span><span class="project-nav-short" aria-hidden="true">All</span>
-          <span class="project-nav-arrow" aria-hidden="true">↗</span>
-        </a>
+        <a class="project-nav-link" href="ai-tools.html" aria-label="AI tools"><span class="project-nav-wide">AI Tools</span><span class="project-nav-short" aria-hidden="true">AI</span></a>
+        <a class="project-nav-link" href="web-design.html" aria-label="Web design"><span class="project-nav-wide">Web Design</span><span class="project-nav-short" aria-hidden="true">Web</span></a>
+        <a class="project-nav-link" href="graphic-design.html" aria-label="Graphic design"><span class="project-nav-wide">Graphic Design</span><span class="project-nav-short" aria-hidden="true">Graphics</span></a>
+        <a class="project-nav-link" href="custom-software.html" aria-label="Custom software"><span class="project-nav-wide">Custom Software</span><span class="project-nav-short" aria-hidden="true">Software</span></a>
+        <a class="project-nav-link project-nav-all" href="projects.html" aria-label="All projects"><span class="project-nav-wide">All Projects</span><span class="project-nav-short" aria-hidden="true">All</span></a>
       </nav>
     </header>
 
     <main id="main">
       <section class="hero" id="top">
         <div class="hero-copy">
-          <p class="eyebrow"><span></span> Strategy · design · development</p>
-          <h1>Design solutions<br />for ideas worth <em>building.</em></h1>
+          <p class="eyebrow"><span></span>Strategy, Design &amp; Development</p>
+          <h1>Design solutions for ideas worth <em>building.</em></h1>
           <div class="hero-bottom">
-            <p class="hero-intro">
-              Synaptech designs and builds digital products, websites,
-              storefronts, and interactive experiences around a clear purpose
-              and the people using them.
-            </p>
-            <a class="button" href="mailto:solutionswithsynaptech@gmail.com?subject=Synaptech%20project%20inquiry">
-              Start a project <span aria-hidden="true">↗</span>
-            </a>
+            <p class="hero-intro">Synaptech designs and builds digital products, websites, storefronts, and interactive experiences around a clear purpose and the people using them.</p>
+            <div class="hero-actions">
+              <a class="button" href="projects.html">Explore Projects</a>
+              <a class="text-link" href="mailto:solutionswithsynaptech@gmail.com?subject=Synaptech%20project%20inquiry">Start a Project</a>
+            </div>
           </div>
+        </div>
+
+        <div class="featured-deck" aria-label="Featured projects">
+          <a class="feature-tile feature-tile-tonaliq" href="project-tonaliq.html">
+            <img src="assets/project-cards/tonaliq.png" width="5808" height="1945" alt="TonaliQ wordmark and listening mark" fetchpriority="high" />
+            <span class="feature-caption"><span>TonaliQ</span><span>Product &amp; AI</span></span>
+          </a>
+          <a class="feature-tile" href="project-move-team.html">
+            <img src="assets/project-cards/byu-move.jpg" width="1200" height="1200" alt="BYU Move participants running on a track" fetchpriority="high" />
+            <span class="feature-caption"><span>BYU Move</span><span>Custom Software</span></span>
+          </a>
+          <a class="feature-tile feature-tile-decal" href="project-decal-company.html">
+            <img src="assets/project-cards/decal-company.png" width="6000" height="4000" alt="The Decal Company identity application" fetchpriority="high" />
+            <span class="feature-caption"><span>The Decal Company</span><span>Identity</span></span>
+          </a>
         </div>
       </section>
     </main>

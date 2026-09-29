@@ -3,11 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f7f7f4" />
     <meta name="description" content="An interactive preview of the BYU Move Team Management System." />
     <title>BYU Move Team Management System — Synaptech</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;600;700&family=Sora:wght@400;500;600&display=swap" rel="stylesheet" />
     <link rel="preload" as="image" href="assets/byu-move/background.jpeg" />
     <link rel="stylesheet" href="styles.css" />
     <script src="project-preview.js" defer></script>
@@ -15,13 +16,13 @@
   <body class="preview-page">
     <a class="skip-link" href="#main">Skip to content</a>
     <header class="site-header">
-      <a class="brand" href="index.html" aria-label="Synaptech home"><img src="assets/synaptech-design-logo.png" alt="Synaptech Design Solutions" /></a>
+      <a class="brand" href="index.html" aria-label="Synaptech home"><img src="assets/synaptech-design-logo.png" width="5580" height="1740" alt="Synaptech Design Solutions" /></a>
       <nav class="project-nav" aria-label="Primary">
-        <a class="project-nav-link" href="ai-tools.html" aria-label="AI tools"><span class="project-nav-wide">AI tools</span><span class="project-nav-short" aria-hidden="true">AI</span></a>
-        <a class="project-nav-link" href="web-design.html" aria-label="Web design"><span class="project-nav-wide">Web design</span><span class="project-nav-short" aria-hidden="true">Web</span></a>
-        <a class="project-nav-link" href="graphic-design.html" aria-label="Graphic design"><span class="project-nav-wide">Graphic design</span><span class="project-nav-short" aria-hidden="true">Graphics</span></a>
-        <a class="project-nav-link" href="custom-software.html" aria-label="Custom software"><span class="project-nav-wide">Custom software</span><span class="project-nav-short" aria-hidden="true">Software</span></a>
-        <a class="project-nav-link project-nav-all" href="projects.html" aria-label="All projects"><span class="project-nav-wide">All projects</span><span class="project-nav-short" aria-hidden="true">All</span><span class="project-nav-arrow" aria-hidden="true">↗</span></a>
+        <a class="project-nav-link" href="ai-tools.html" aria-label="AI tools"><span class="project-nav-wide">AI Tools</span><span class="project-nav-short" aria-hidden="true">AI</span></a>
+        <a class="project-nav-link" href="web-design.html" aria-label="Web design"><span class="project-nav-wide">Web Design</span><span class="project-nav-short" aria-hidden="true">Web</span></a>
+        <a class="project-nav-link" href="graphic-design.html" aria-label="Graphic design"><span class="project-nav-wide">Graphic Design</span><span class="project-nav-short" aria-hidden="true">Graphics</span></a>
+        <a class="project-nav-link" href="custom-software.html" aria-label="Custom software"><span class="project-nav-wide">Custom Software</span><span class="project-nav-short" aria-hidden="true">Software</span></a>
+        <a class="project-nav-link project-nav-all" href="projects.html" aria-label="All projects"><span class="project-nav-wide">All Projects</span><span class="project-nav-short" aria-hidden="true">All</span></a>
       </nav>
     </header>
     <main class="preview-main" id="main">
@@ -33,7 +34,7 @@
             <p class="preview-intro">A Flask-based application for the BYU Move initiative with public registration and survey paths, participant self-service, and mentor and administrative operations.</p>
             <a class="preview-back" href="custom-software.html">← Back to custom software</a>
           </div>
-          <div class="preview-mark" aria-hidden="true">MT</div>
+          <div class="preview-cover"><img src="assets/project-cards/byu-move.jpg" width="1200" height="1200" alt="BYU Move participants running on a track" fetchpriority="high" /></div>
         </div>
       </section>
 
@@ -52,9 +53,9 @@
           <div class="move-demo-bar">
             <span class="move-demo-brand">BYU MOVE · PROJECT DEMO</span>
             <div class="move-demo-tabs" role="tablist" aria-label="BYU Move demo views">
-              <button class="move-demo-tab" type="button" role="tab" aria-selected="true" data-move-view="home">Program home</button>
-              <button class="move-demo-tab" type="button" role="tab" aria-selected="false" data-move-view="movers">Movers</button>
-              <button class="move-demo-tab" type="button" role="tab" aria-selected="false" data-move-view="admin">Admin portal</button>
+              <button class="move-demo-tab" type="button" role="tab" aria-selected="true" tabindex="0" data-move-view="home">Program Home</button>
+              <button class="move-demo-tab" type="button" role="tab" aria-selected="false" tabindex="-1" data-move-view="movers">Movers</button>
+              <button class="move-demo-tab" type="button" role="tab" aria-selected="false" tabindex="-1" data-move-view="admin">Admin Portal</button>
             </div>
           </div>
 
@@ -85,13 +86,13 @@
                 <div class="byu-admin-title"><h3>Mentors Portal</h3><p>Manage attendance and view session information — <strong>Spring Term 2026</strong></p></div>
                 <div class="byu-admin-welcome">Welcome, <strong>BYU Move Admin</strong></div>
                 <div class="byu-admin-tabs" role="tablist" aria-label="Admin portal views">
-                  <button type="button" aria-selected="true" data-admin-view="dashboard">Dashboard</button>
-                  <button type="button" aria-selected="false" data-admin-view="sessions">Sessions</button>
-                  <button type="button" aria-selected="false" data-admin-view="participants">Participants</button>
-                  <button type="button" aria-selected="false" data-admin-view="calendar">Calendar</button>
-                  <button type="button" aria-selected="false" data-admin-view="manage">Manage Sessions</button>
-                  <button type="button" aria-selected="false" data-admin-view="mentors">Manage Mentors</button>
-                  <button type="button" aria-selected="false" data-admin-view="tools">System Tools</button>
+                  <button type="button" role="tab" aria-selected="true" tabindex="0" data-admin-view="dashboard">Dashboard</button>
+                  <button type="button" role="tab" aria-selected="false" tabindex="-1" data-admin-view="sessions">Sessions</button>
+                  <button type="button" role="tab" aria-selected="false" tabindex="-1" data-admin-view="participants">Participants</button>
+                  <button type="button" role="tab" aria-selected="false" tabindex="-1" data-admin-view="calendar">Calendar</button>
+                  <button type="button" role="tab" aria-selected="false" tabindex="-1" data-admin-view="manage">Manage Sessions</button>
+                  <button type="button" role="tab" aria-selected="false" tabindex="-1" data-admin-view="mentors">Manage Mentors</button>
+                  <button type="button" role="tab" aria-selected="false" tabindex="-1" data-admin-view="tools">System Tools</button>
                 </div>
                 <div class="byu-admin-panel" data-admin-panel="dashboard">
                   <div class="byu-admin-card"><h4>Next Session</h4><p>No upcoming sessions found in this demonstration state.</p></div>

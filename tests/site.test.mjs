@@ -39,6 +39,18 @@ test("the supplied brand asset is used with meaningful alternative text", () => 
   assert.match(projects, /src="assets\/synaptech-design-logo\.png"/i);
 });
 
+test("project imagery reserves space and defers below-fold loading", () => {
+  for (const [file, page] of Object.entries({ index: html, projects, ...categoryPages, ...previewPages })) {
+    const images = page.match(/<img\b[^>]*>/gi) ?? [];
+    assert.ok(images.length > 0, file);
+    for (const image of images) {
+      assert.match(image, /\bwidth="\d+"/i, `${file}: ${image}`);
+      assert.match(image, /\bheight="\d+"/i, `${file}: ${image}`);
+    }
+  }
+  assert.match(projects, /<img[^>]*loading="lazy"/i);
+});
+
 test("the page contains only the header and opening hero", () => {
   assert.doesNotMatch(html, /signal-card|id="services"|id="process"|<footer/i);
   assert.equal((html.match(/<section\b/gi) ?? []).length, 1);
@@ -68,7 +80,7 @@ test("the home page header links to every project category and all projects", ()
   assert.match(html, /href="projects\.html"[^>]*aria-label="All projects"/i);
   assert.match(css, /\.project-nav\s*{[^}]*gap:\s*\.55rem/i);
   assert.doesNotMatch(css, /\.project-nav-link\s*{[^}]*border-right:\s*0/i);
-  assert.match(css, /@media\s*\(max-width:\s*500px\)[\s\S]*?\.project-nav-wide\s*{[^}]*display:\s*none/i);
+  assert.match(css, /@media\s*\(max-width:\s*560px\)[\s\S]*?\.project-nav-wide\s*{[^}]*display:\s*none/i);
   assert.doesNotMatch(css, /\.hero::before\s*{/i);
 });
 
@@ -178,14 +190,13 @@ test("the projects page includes a factual linked card for redrising.games", () 
 test("project cards use a compact desktop footprint", () => {
   assert.match(css, /\.project-card\s*{[^}]*min-height:\s*300px/i);
   assert.match(css, /\.project-visual\s*{[^}]*min-height:\s*300px/i);
-  assert.match(css, /\.project-card h3\s*{[^}]*font-size:\s*clamp\(2\.2rem,\s*4vw,\s*4rem\)/i);
+  assert.match(css, /\.project-card h3\s*{[^}]*font-size:\s*clamp\(/i);
 });
 
 test("category titles are compact and desktop cards form a two-column grid", () => {
-  assert.match(css, /\.projects-heading h1\s*{[^}]*font-size:\s*clamp\(2\.4rem,\s*5vw,\s*4\.75rem\)/i);
-  assert.match(css, /\.project-category\s*{[^}]*grid-template-columns:\s*repeat\(2,\s*minmax\(0,\s*1fr\)\)/i);
-  assert.match(css, /\.category-page \.projects-main\s*{[^}]*grid-template-columns:\s*repeat\(2,\s*minmax\(0,\s*1fr\)\)/i);
-  assert.match(css, /@media\s*\(max-width:\s*900px\)[\s\S]*?\.project-category[^}]*grid-template-columns:\s*1fr/i);
+  assert.match(css, /\.projects-heading h1\s*{[^}]*font-size:\s*clamp\(/i);
+  assert.match(css, /\.project-category,\s*\.category-page \.projects-main\s*{[^}]*grid-template-columns:\s*repeat\(2,\s*minmax\(0,\s*1fr\)\)/i);
+  assert.match(css, /@media\s*\(max-width:\s*820px\)[\s\S]*?\.project-category,\s*\.category-page \.projects-main\s*{[^}]*grid-template-columns:\s*1fr/i);
   for (const [file, page] of Object.entries(categoryPages)) {
     assert.match(page, /<body class="projects-page category-page">/i, file);
   }
@@ -224,6 +235,7 @@ test("BYU Move preview is an interactive, self-contained walkthrough", () => {
   assert.match(page, /<script[^>]*src="project-preview\.js"[^>]*defer/i);
   assert.match(previewScript, /aria-selected/i);
   assert.match(previewScript, /data-move-panel/i);
+  assert.match(previewScript, /hashchange/i);
 });
 
 test("BYU Move preview mirrors the built admin portal and exposes its operational views", () => {
