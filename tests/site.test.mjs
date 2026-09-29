@@ -188,15 +188,16 @@ test("the projects page includes a factual linked card for redrising.games", () 
 });
 
 test("project cards use a compact desktop footprint", () => {
-  assert.match(css, /\.project-card\s*{[^}]*min-height:\s*0/i);
-  assert.match(css, /\.project-card\s*{[^}]*grid-template-rows:\s*minmax\(185px,\s*19vw\)\s*auto/i);
-  assert.match(css, /\.project-visual\s*{[^}]*min-height:\s*190px/i);
+  assert.match(css, /\.project-card\s*{[^}]*aspect-ratio:\s*1/i);
+  assert.match(css, /\.project-card\s*{[^}]*grid-template-rows:\s*minmax\(0,\s*47%\)\s*minmax\(0,\s*53%\)/i);
+  assert.match(css, /\.project-visual\s*{[^}]*min-height:\s*0/i);
   assert.match(css, /\.project-card h3\s*{[^}]*font-size:\s*clamp\(/i);
 });
 
-test("category titles are compact and desktop cards form a two-column grid", () => {
+test("category titles are compact and square cards use a responsive grid", () => {
   assert.match(css, /\.projects-heading h1\s*{[^}]*font-size:\s*clamp\(/i);
-  assert.match(css, /\.project-category,\s*\.category-page \.projects-main\s*{[^}]*grid-template-columns:\s*repeat\(2,\s*minmax\(0,\s*1fr\)\)/i);
+  assert.match(css, /\.project-category,\s*\.category-page \.projects-main\s*{[^}]*grid-template-columns:\s*repeat\(3,\s*minmax\(0,\s*1fr\)\)/i);
+  assert.match(css, /@media\s*\(max-width:\s*1060px\)[\s\S]*?\.project-category,\s*\.category-page \.projects-main\s*{[^}]*grid-template-columns:\s*repeat\(2,\s*minmax\(0,\s*1fr\)\)/i);
   assert.match(css, /@media\s*\(max-width:\s*820px\)[\s\S]*?\.project-category,\s*\.category-page \.projects-main\s*{[^}]*grid-template-columns:\s*1fr/i);
   for (const [file, page] of Object.entries(categoryPages)) {
     assert.match(page, /<body class="projects-page category-page">/i, file);
