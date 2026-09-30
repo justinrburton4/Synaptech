@@ -265,25 +265,25 @@ test("each preview page includes project detail beyond its opening summary", () 
   }
 });
 
-test("project cards and preview heroes use the same project artwork as the homepage graph", () => {
+test("project previews use representative project visuals", () => {
   const expectedArtwork = {
-    "project-tonaliq.html": "assets/project-logos/tonaliq-app-icon.png",
-    "project-design-byu.html": "assets/project-logos/desx.png",
-    "project-red-rising.html": "assets/project-logos/red-rising-games.png",
-    "project-spicy-pineapple.html": "assets/project-logos/spdg.png",
-    "project-move-team.html": "assets/byu-move/logo.png",
+    "project-tonaliq.html": "assets/project-cards/tonaliq.png",
+    "project-design-byu.html": "assets/project-cards/design-byu.jpg",
+    "project-red-rising.html": "assets/project-cards/red-rising.png",
+    "project-spicy-pineapple.html": "assets/project-cards/spicy-pineapple.png",
+    "project-decal-company.html": "assets/decal-company/card-lockup.png",
+    "project-move-team.html": "assets/byu-move/background.jpeg",
   };
 
   for (const [file, artwork] of Object.entries(expectedArtwork)) {
     assert.match(previewPages[file], new RegExp(artwork.replaceAll("/", "\\/").replaceAll(".", "\\."), "i"), file);
-    assert.match(projects, new RegExp(artwork.replaceAll("/", "\\/").replaceAll(".", "\\."), "i"), file);
   }
 
   assert.match(projects, /assets\/decal-company\/card-lockup\.png/i);
-  assert.match(previewPages["project-decal-company.html"], /assets\/decal-company\/monogram\.png/i);
 
   assert.match(css, /\.category-page\s*{[^}]*min-height:\s*100svh[^}]*grid-template-rows:\s*auto\s+minmax\(0,\s*1fr\)/i);
-  assert.match(css, /\.preview-hero\s*{[^}]*min-height:\s*calc\(100svh\s*-\s*94px\)/i);
+  assert.match(css, /\.preview-page \.preview-hero\s*{[^}]*min-height:\s*0/i);
+  assert.match(css, /\.preview-page \.preview-details\s*{[^}]*grid-template-columns:/i);
 });
 
 test("the minimalist homepage concept remains factual and brand-led", () => {

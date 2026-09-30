@@ -220,6 +220,49 @@ h1 { max-width: 950px; margin: 0; font-family: "Sora", Arial, sans-serif; font-s
 .byu-tool-grid { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: .85rem; }
 .byu-tool-grid span { padding: .45rem .55rem; border: 1px solid rgb(201 208 219); border-radius: .25rem; color: rgb(72 88 111); font-size: .68rem; }
 
+/* Compact project stories */
+.preview-page .preview-main { padding-bottom: clamp(2rem, 4vh, 3.5rem); }
+.preview-page .preview-hero { min-height: 0; justify-content: flex-start; padding: clamp(1.5rem, 3vh, 2.4rem) 0 clamp(1.75rem, 4vh, 3rem); }
+.preview-page .preview-hero .eyebrow { margin-bottom: .65rem; }
+.preview-page .preview-hero h1 { max-width: 16ch; font-size: clamp(2.6rem, 4.5vw, 4.8rem); line-height: .98; }
+.preview-page .preview-layout { grid-template-columns: minmax(260px, .72fr) minmax(0, 1.28fr); align-items: center; margin-top: clamp(1rem, 2vh, 1.5rem); gap: clamp(1.25rem, 3vw, 3rem); }
+.preview-page .preview-intro { max-width: 52ch; font-size: clamp(.92rem, 1vw, 1.05rem); line-height: 1.55; }
+.preview-page .preview-actions, .preview-page .preview-back { margin-top: 1rem; }
+.preview-page .project-shot { position: relative; height: min(35vh, 300px); min-height: 230px; margin: 0; background: var(--white); }
+.preview-page .project-shot img { width: 100%; height: 100%; padding: 0; object-fit: cover; }
+.preview-page .project-shot--dark { background: #000; }
+.preview-page .project-shot--dark img { object-fit: contain; }
+.preview-page .project-shot figcaption { position: absolute; right: .65rem; bottom: .65rem; padding: .38rem .55rem; border-radius: 999px; background: rgb(21 23 22 / 82%); color: var(--white); font-size: .62rem; font-weight: 650; backdrop-filter: blur(8px); }
+.preview-page .preview-details { display: grid; grid-template-columns: minmax(250px, .72fr) minmax(0, 1.28fr); grid-template-rows: auto 1fr; gap: 1rem clamp(1.25rem, 3vw, 3rem); padding-top: clamp(1.25rem, 2.5vh, 2rem); }
+.preview-page .preview-details-head { display: block; margin: 0; }
+.preview-page .preview-details h2 { margin-top: .55rem; font-size: clamp(1.65rem, 2.4vw, 2.8rem); line-height: 1.05; }
+.preview-page .preview-facts { grid-template-columns: 1fr; gap: .45rem; align-content: start; }
+.preview-page .preview-fact { padding: .8rem .9rem; border-radius: 10px; }
+.preview-page .preview-fact + .preview-fact { padding-left: .9rem; }
+.preview-page .preview-fact strong { margin-bottom: .2rem; }
+.preview-page .preview-fact p { font-size: .78rem; line-height: 1.4; }
+.preview-page .live-project-window, .preview-page .move-demo, .preview-page .preview-gallery { grid-column: 2; grid-row: 1 / span 2; align-self: stretch; margin: 0; }
+.preview-page .window-bar, .preview-page .move-demo-bar { min-height: 44px; }
+.preview-page .window-content { padding: clamp(1.25rem, 2.5vw, 2.2rem); }
+.preview-page .window-content h3 { font-size: clamp(1.45rem, 2vw, 2.2rem); }
+.preview-page .window-content p { font-size: .85rem; line-height: 1.5; }
+.preview-page .window-links { margin-top: 1rem; }
+.preview-page .preview-gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .6rem; }
+.preview-page .preview-gallery figure:first-child { grid-column: auto; }
+.preview-page .preview-gallery img { width: 100%; height: 120px; object-fit: cover; }
+.preview-page .preview-gallery figcaption { padding: .55rem .65rem; }
+.preview-page .move-demo-panel { min-height: 320px; }
+.preview-page .move-demo-home { min-height: 320px; padding: clamp(1.5rem, 3vw, 2.5rem); }
+.preview-page .move-demo-home h3 { font-size: clamp(1.8rem, 3vw, 2.8rem); }
+.preview-page .move-dashboard { padding: clamp(1.25rem, 2.5vw, 2rem); }
+.preview-page .move-demo-grid { margin-top: 1rem; }
+.preview-page .move-demo-card { min-height: 105px; padding: .9rem; }
+.preview-page .byu-admin-shell { min-height: 340px; }
+.preview-page .byu-admin-body { padding: 1rem 1.25rem; }
+.preview-page .byu-admin-title h3 { font-size: clamp(1.5rem, 2.5vw, 2.2rem); }
+.preview-page .byu-admin-welcome { margin: 1rem 0 .55rem; font-size: 1rem; }
+.preview-page .byu-admin-card { min-height: 80px; padding: .8rem; }
+
 @media (min-width: 761px) and (max-height: 850px) {
   .site-header { min-height: 82px; }
   .hero { padding: 1.5rem 0; }
@@ -265,6 +308,11 @@ h1 { max-width: 950px; margin: 0; font-family: "Sora", Arial, sans-serif; font-s
   .project-card { width: min(100%, 440px); aspect-ratio: auto; justify-self: center; grid-template-rows: minmax(210px, 38vw) auto; }
   .category-page .project-card { width: min(100%, 440px); aspect-ratio: auto; grid-template-columns: 1fr; grid-template-rows: minmax(210px, 38vw) auto; }
   .preview-layout { grid-template-columns: 1fr; }
+  .preview-page .preview-layout { grid-template-columns: 1fr; }
+  .preview-page .project-shot { height: min(52vw, 300px); min-height: 220px; }
+  .preview-page .preview-details { display: block; }
+  .preview-page .preview-facts { grid-template-columns: 1fr; margin-top: 1rem; }
+  .preview-page .live-project-window, .preview-page .move-demo, .preview-page .preview-gallery { margin-top: 1rem; }
   .preview-details-head { grid-template-columns: 1fr; gap: 1rem; }
   .preview-facts { grid-template-columns: 1fr; }
   .preview-fact + .preview-fact { border-left: 0; border-top: 1px solid var(--line); padding-left: 0; }
