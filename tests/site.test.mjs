@@ -271,7 +271,6 @@ test("project cards and preview heroes use the same project artwork as the homep
     "project-design-byu.html": "assets/project-logos/desx.png",
     "project-red-rising.html": "assets/project-logos/red-rising-games.png",
     "project-spicy-pineapple.html": "assets/project-logos/spdg.png",
-    "project-decal-company.html": "assets/decal-company/monogram.png",
     "project-move-team.html": "assets/byu-move/logo.png",
   };
 
@@ -279,6 +278,9 @@ test("project cards and preview heroes use the same project artwork as the homep
     assert.match(previewPages[file], new RegExp(artwork.replaceAll("/", "\\/").replaceAll(".", "\\."), "i"), file);
     assert.match(projects, new RegExp(artwork.replaceAll("/", "\\/").replaceAll(".", "\\."), "i"), file);
   }
+
+  assert.match(projects, /assets\/decal-company\/card-lockup\.png/i);
+  assert.match(previewPages["project-decal-company.html"], /assets\/decal-company\/monogram\.png/i);
 
   assert.match(css, /\.category-page\s*{[^}]*min-height:\s*100svh[^}]*grid-template-rows:\s*auto\s+minmax\(0,\s*1fr\)/i);
   assert.match(css, /\.preview-hero\s*{[^}]*min-height:\s*calc\(100svh\s*-\s*94px\)/i);

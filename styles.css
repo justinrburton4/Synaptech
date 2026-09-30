@@ -121,11 +121,12 @@ h1 { max-width: 950px; margin: 0; font-family: "Sora", Arial, sans-serif; font-s
 .project-visual-spdg img { padding: 0; object-fit: cover; }
 .project-visual-rising, .project-visual-spdg, .project-visual-decal { background: #000; }
 .project-visual-rising img { padding: clamp(.75rem, 1.5vw, 1.4rem); }
-.project-visual-spdg img { transform: scale(1.35); }
-.project-card:hover .project-visual-spdg img, .project-card:focus-within .project-visual-spdg img { transform: scale(1.4); }
+.project-visual-spdg img { transform: scale(1.5); }
+.project-card:hover .project-visual-spdg img, .project-card:focus-within .project-visual-spdg img { transform: scale(1.54); }
 .project-visual-move img { padding-inline: clamp(1rem, 2vw, 2rem); }
-.project-visual-decal img { padding: 0; transform: scale(1.32); }
-.project-card:hover .project-visual-decal img, .project-card:focus-within .project-visual-decal img { transform: scale(1.37); }
+.project-visual-decal { background: var(--paper); }
+.project-visual-decal img { padding: 0; object-fit: cover; transform: scale(1.04); }
+.project-card:hover .project-visual-decal img, .project-card:focus-within .project-visual-decal img { transform: scale(1.08); }
 
 .preview-main { padding: 0 0 clamp(4rem, 8vh, 7rem); }
 .preview-hero { min-height: calc(100svh - 94px); display: flex; flex-direction: column; justify-content: center; padding: clamp(1.25rem, 3vh, 2.5rem) 0; }
