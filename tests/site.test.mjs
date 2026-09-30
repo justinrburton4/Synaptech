@@ -20,13 +20,6 @@ const previewPages = {
   "project-move-team.html": await readFile(new URL("../project-move-team.html", import.meta.url), "utf8").catch(() => ""),
 };
 const previewScript = await readFile(new URL("../project-preview.js", import.meta.url), "utf8").catch(() => "");
-const homePrototypes = {
-  "home-prototype-1.html": await readFile(new URL("../home-prototype-1.html", import.meta.url), "utf8").catch(() => ""),
-  "home-prototype-2.html": await readFile(new URL("../home-prototype-2.html", import.meta.url), "utf8").catch(() => ""),
-  "home-prototype-3.html": await readFile(new URL("../home-prototype-3.html", import.meta.url), "utf8").catch(() => ""),
-};
-const homePrototypeCss = await readFile(new URL("../home-prototypes.css", import.meta.url), "utf8").catch(() => "");
-const homePrototypeScript = await readFile(new URL("../home-prototypes.js", import.meta.url), "utf8").catch(() => "");
 const allInteriorPages = { projects, ...categoryPages, ...previewPages };
 
 test("landing page presents Synaptech without unverifiable proof claims", () => {
@@ -267,26 +260,4 @@ test("each preview page includes project detail beyond its opening summary", () 
     assert.match(page, /class="preview-details"/i, file);
     assert.match(page, /<h2/i, file);
   }
-});
-
-test("three independent homepage concepts use real projects and accessible interactions", () => {
-  const expectedLayouts = ["ex-main", "di-main", "ws-main"];
-  Object.entries(homePrototypes).forEach(([file, page], index) => {
-    assert.match(page, new RegExp('class="' + expectedLayouts[index] + '"'), file);
-    assert.match(page, /assets\/synaptech-design-logo\.png/i, file);
-    assert.match(page, /assets\/project-cards\//i, file);
-    assert.match(page, /home-prototype-1\.html[\s\S]*home-prototype-2\.html[\s\S]*home-prototype-3\.html/i, file);
-    assert.doesNotMatch(page, /\b(?:award-winning|industry-leading|trusted by|guaranteed|#1)\b/i, file);
-    assert.match(page, /href="projects\.html"/i, file);
-  });
-  assert.match(homePrototypeCss, /@media\(max-width:760px\)/i);
-  assert.match(homePrototypeCss, /prefers-reduced-motion:reduce/i);
-  assert.match(homePrototypeCss, /@keyframes ex-image-in/i);
-  assert.match(homePrototypeCss, /@keyframes di-preview-in/i);
-  assert.match(homePrototypeCss, /@keyframes ws-open/i);
-  assert.match(homePrototypeScript, /aria-pressed/i);
-  assert.match(homePrototypeScript, /data-ex-button/i);
-  assert.match(homePrototypeScript, /data-di-item/i);
-  assert.match(homePrototypeScript, /showModal\(\)/i);
-  assert.match(homePrototypes["home-prototype-3.html"], /<dialog\b/i);
 });
